@@ -21,6 +21,8 @@ The supplied two-page 687.pdf was read completely. It is a forum printout, not a
 
 ## Research limits
 
-The local corpus audit records 6 discovered works, 3 screened, 3 reviewed in full text and 1 mathematical proof input; the arXiv subset has 0 in all four counts. The requested Studio's default 100-paper literature quota is not met. Reading records are separate from proof verification, and the research campaign is not claimed complete.
+The local corpus audit records 6 discovered works, 4 screened, 3 reviewed in full text and 1 mathematical proof input; the arXiv subset has 0 in all four counts. The requested Studio's default 100-paper literature quota is not met. Reading records are separate from proof verification, and the research campaign is not claimed complete.
 
 The bound formalized by the transfer is known mathematics. The stronger near-linear upper bound, exact order of Y(x), and an asymptotically matching lower bound are not proved here. A still-unverified dependency port does not establish the final unconditional Lean theorem.
+
+The official publisher preview of Er96b was screened, but the complete three-page text was not obtained. Its displayed inequality direction is unresolved without the full scan; it is not used as a proof input.

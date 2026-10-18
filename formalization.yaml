@@ -1,0 +1,79 @@
+version: v0.4
+project:
+  name: Quantitative bridge for Erdos problem 687
+  description: >-
+    An independent CRT and prime-counting transfer from a uniform quadratic
+    Jacobsthal bound to Y(x) = O((x/log x)^2). The conditional transfer is
+    verified. The candidate unconditional instantiation still awaits the
+    imported OpenAI theorem's dependency rebuild. The near-linear bound
+    in the original problem remains open.
+  authors: [AItoBit]
+  responsible_maintainers: [AItoBit]
+  license: Apache-2.0
+classification:
+  arxiv: [math.NT]
+  msc2020: [11N35, 11N36]
+sources:
+  - title: A quadratic bound for Jacobsthal's function
+    authors: [OpenAI]
+    id: https://github.com/openai/math/tree/1581d4cbdd69a0faf34b2089614fe2a814316a6a
+    type: preprint and Lean development
+    location: September 25, 2026, theorem 1.1; Jacobsthal conclusions
+    relationship: adapts
+    license: Apache-2.0
+    author_endorsement: not-contacted
+    note: >-
+      OpenAI proved the substantial analytic input. This project reuses its
+      actual closed theorem through a separately pinned compatibility port,
+      rather than claiming to re-prove that theorem independently.
+  - title: Some unconventional problems in number theory
+    authors: [Paul Erdos]
+    id: https://users.renyi.hu/~p_erdos/1979-23.pdf
+    type: article
+    location: Acta Math. Acad. Sci. Hungar. 33 (1979), page 79
+    relationship: background
+    note: Original covering problem; its full near-linear conclusion is not claimed.
+  - title: Jacobsthal to Erdos 687
+    authors: [H. J. van Veen]
+    id: https://github.com/30k30/scholia/blob/b072c89c3edac06521868e32cc15b2bc91bd8533/erdos-687/glue/JacobsthalTo687.lean
+    type: Lean development
+    relationship: background
+    author_endorsement: not-contacted
+    note: >-
+      Prior formalization of the little-o result, using the same OpenAI input.
+      The CRT and prime-counting transfer here is independently implemented.
+status:
+  scope: >-
+    Work in progress. Transfer and Challenge passed strict build in CI
+    39105612412 at d528e7cf81ec28b00a872bc3ec4ec4be22cf8452.
+    The two transfer declarations' axiom reports contain only propext,
+    Classical.choice and Quot.sound. Solution.lean is an unverified candidate;
+    a Transfer-only CI result cannot certify the unconditional theorem.
+  sorry_count: 0
+  sorry_in_definitions: 0
+automation:
+  methods:
+    - method: agent
+      framework: Codex desktop
+      tool_setup: >-
+        Independent Codex agents audited sources, implemented the transfer,
+        reviewed the mathematical correspondence and ran hosted Lean checks.
+        Erdos Research Lab and Mathematics Research Studio supplied research
+        protocols. The 100-paper corpus quota remains unmet.
+  notes: >-
+    AItoBit directed the work and confirmed responsible human maintenance.
+    This records direction and responsibility, not manual human proof writing.
+review:
+  status: agent-reviewed
+  notes: >-
+    Separate agents checked the covering definition, CRT endpoints, uniform
+    Jacobsthal hypothesis and Chebyshev transfer. Compiler verification of
+    the closed Solution and independent kernel checks remain pending. No
+    human expert review or source-author endorsement is claimed.
+fidelity:
+  divergences: >-
+    Records a known quantitative upper bound only, not the exact order or
+    the near-linear conjecture. Uses the exact finite natural residue-cover
+    definition and its natural supremum. The dependency port documents
+    original pins and third-party licensing, including externally fetched
+    StrongPNT material whose upstream repository has no explicit license.

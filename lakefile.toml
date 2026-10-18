@@ -1,6 +1,6 @@
 name = "erdos687"
 version = "0.1.0"
-defaultTargets = ["Transfer", "Challenge"]
+defaultTargets = ["Solution", "Challenge"]
 [leanOptions]
 autoImplicit = false
 [[require]]
