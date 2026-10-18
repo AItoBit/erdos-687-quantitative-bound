@@ -54,9 +54,9 @@ theorem quadratic_transfer
   obtain ⟨C, hC, hJ⟩ := H
   have hpi : ∀ᶠ x : ℕ in atTop,
       (x.primeCounting : ℝ) ≤ (Real.log 4 + 1) * (x : ℝ) / Real.log (x : ℝ) := by
-    have h := (Chebyshev.eventually_primeCounting_le (by norm_num : (0 : ℝ) < 1)).comp_tendsto
-      (tendsto_natCast_atTop_atTop :
-        Tendsto (fun x : ℕ ↦ (x : ℝ)) atTop atTop)
+    have h := (tendsto_natCast_atTop_atTop :
+        Tendsto (fun x : ℕ ↦ (x : ℝ)) atTop atTop).eventually
+      (Chebyshev.eventually_primeCounting_le (by norm_num : (0 : ℝ) < 1))
     simpa only [Function.comp_apply, Nat.floor_natCast] using h
   refine Asymptotics.IsBigO.of_bound (C * (Real.log 4 + 1) ^ 2) ?_
   filter_upwards [hpi, eventually_ge_atTop (2 : ℕ)] with x hx hx2
