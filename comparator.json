@@ -1,0 +1,16 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "definition_names": [
+    "Erdos687.Covered",
+    "Erdos687.Y"
+  ],
+  "theorem_names": [
+    "Erdos687.quadratic_log"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}

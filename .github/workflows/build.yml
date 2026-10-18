@@ -11,11 +11,16 @@ jobs:
       - uses: actions/checkout@v4
       - uses: leanprover/lean-action@v1
         with:
-          build-args: '--wfail Transfer'
+          build-args: '--wfail Transfer Challenge'
       - name: Audit explicit conditional transfer
         shell: bash
         run: |
           set -o pipefail
-          printf 'module\nimport Transfer\n#print axioms Erdos687.covered_iff_shift\n#print axioms Erdos687.quadratic_transfer\n' > .lake/Audit.lean
+          cat > .lake/Audit.lean <<'LEAN'
+          module
+          import Transfer
+          #print axioms Erdos687.covered_iff_shift
+          #print axioms Erdos687.quadratic_transfer
+          LEAN
           lake env lean .lake/Audit.lean | tee axiom-report.txt
           ! grep -E 'sorryAx|trustCompiler|ofReduceBool' axiom-report.txt
