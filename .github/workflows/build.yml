@@ -1,0 +1,21 @@
+name: Lean transfer
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    env:
+      LEAN_NUM_THREADS: 2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          build-args: '--wfail Transfer'
+      - name: Audit explicit conditional transfer
+        shell: bash
+        run: |
+          set -o pipefail
+          printf 'module\nimport Transfer\n#print axioms Erdos687.covered_iff_shift\n#print axioms Erdos687.quadratic_transfer\n' > .lake/Audit.lean
+          lake env lean .lake/Audit.lean | tee axiom-report.txt
+          ! grep -E 'sorryAx|trustCompiler|ofReduceBool' axiom-report.txt
