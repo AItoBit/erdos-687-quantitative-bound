@@ -17,7 +17,6 @@ mathematical input of OpenAI's September 2026 Jacobsthal proof. A separate
 solution module must instantiate this transfer with that actual proved theorem.
 No theorem from the statement repository is used as a premise.
 
-Research draft: not yet compiled.
 -/
 
 open Filter

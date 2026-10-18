@@ -1,0 +1,39 @@
+Verified generic quantitative transfer
+
+Repository: https://github.com/AItoBit/erdos-687-quantitative-bound
+Verified commit: 7dbff96096532d1cd3bb2e23a506e9185ecb62cd
+Successful Linux CI: https://github.com/AItoBit/erdos-687-quantitative-bound/actions/runs/39105468743
+Toolchain: leanprover/lean4:v4.35.0-rc2
+Mathlib: 065356127b1dc0016f66b7283ce0ce2c4055aa55
+Build: lake --wfail build Transfer
+
+The build successfully checked Erdos687.Finite, Erdos687.Analytic, and Transfer.
+It emitted no proof-module warnings. The audit printed exactly:
+  'Erdos687.covered_iff_shift' depends on axioms:
+    [propext, Classical.choice, Quot.sound]
+  'Erdos687.quadratic_transfer' depends on axioms:
+    [propext, Classical.choice, Quot.sound]
+
+Scope of this verified result:
+The CRT equivalence covered_iff_shift is unconditional. The theorem
+quadratic_transfer has an explicit hypothesis H: the uniform
+quadratic Jacobsthal bound for all positive moduli with at most k distinct prime
+factors and all integer translates. It concludes
+  Y(x) = O((x / log x)^2)
+for the canonical natural supremum of lengths covered by one residue per prime.
+H is a theorem parameter, not an axiom asserted by this project. This CI does
+not prove H and does not check the separate OpenAI dependency. An unconditional
+final solution requires applying this transfer to the actual closed imported
+OpenAI theorem and auditing that final declaration and its dependencies.
+
+The near-linear conjecture and precise order of Y are not proved here. The
+quadratic Jacobsthal input is due to OpenAI, and the existing little-o covering
+formalization is due to 30k30. This project independently formalizes the CRT
+equivalence and the quantitative prime-counting transfer; it does not claim a
+new mathematical bound.
+
+The later commit d528e7cf81ec28b00a872bc3ec4ec4be22cf8452 also passed the build
+and axiom audit, including its Challenge additions:
+https://github.com/AItoBit/erdos-687-quantitative-bound/actions/runs/39105612412
+No local Lean compiler was used for these transfer checks. Later documentation
+edits do not change the proofs; their own CI should be consulted separately.
