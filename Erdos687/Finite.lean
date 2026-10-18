@@ -8,10 +8,10 @@ public import Mathlib.Data.Int.Basic
 public import Mathlib.Tactic.Ring
 
 /-!
-# Finite covering and coprimality: research draft
+# Finite covering and coprimality
 
-These independent elementary proofs have NOT been compiled. They do not prove
-the quadratic Jacobsthal theorem or a new solution of Erdős problem 687.
+These elementary proofs translate residue coverings into coprimality gaps.
+The quantitative Jacobsthal bound is a separate mathematical input.
 The covering definition matches `Green46.IsCoveredByResidues` upstream.
 -/
 
