@@ -14,6 +14,17 @@ jobs:
           build: 'false'
           test: 'false'
           lint: 'false'
+      - name: Restore proof progress from previous source layout
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            .lake/build
+            .lake/packages/jacobsthalLean435/.lake/build
+            .lake/packages/jacobsthalLean435/vendor/PrimeNumberTheoremAnd/.lake/build
+            .lake/packages/jacobsthalLean435/vendor/AbsorptionCutoff/.lake/build
+            .lake/packages/jacobsthalLean435/external/StrongPNT/.lake/build
+          key: proof-progress-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}-${{ github.sha }}-${{ github.run_id }}
+          restore-keys: proof-progress-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}-
       - uses: actions/cache/restore@v4
         with:
           path: |
