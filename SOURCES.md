@@ -21,7 +21,7 @@ The supplied two-page 687.pdf was read completely. It is a forum printout, not a
 
 ## Research limits
 
-The local corpus audit records 7 discovered works, 5 screened, 4 reviewed in full text and 1 mathematical proof input; the arXiv subset has 0 in all four counts. The requested Studio's default 100-paper literature quota is not met. Reading records are separate from proof verification, and the research campaign is not claimed complete.
+The local corpus audit records 7 discovered works, 6 screened, 4 reviewed in full text and 1 mathematical proof input; the arXiv subset has 0 in all four counts. The requested Studio's default 100-paper literature quota is not met. Reading records are separate from proof verification, and the research campaign is not claimed complete.
 
 The bound formalized by the transfer is known mathematics. The stronger near-linear upper bound, exact order of Y(x), and an asymptotically matching lower bound are not proved here. A still-unverified dependency port does not establish the final unconditional Lean theorem.
 
@@ -51,3 +51,8 @@ The earlier candidate used inherited paths below `.lake` and a runtime source
 bootstrap. That layout is ineligible for the selected Palomar verifier. The
 Git-only layout must pass complete compilation and exact-commit preflight;
 source provenance alone does not establish either result.
+
+Iwaniec's 1978 article was screened through the available publisher-provided
+transcription. The primary eight-page PDF was not obtained, and the transcription
+omits critical displayed formulas. No full-paper reading or independent audit of
+its complete proof is claimed; it is not an input to the formal proof here.
