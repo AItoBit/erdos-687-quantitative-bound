@@ -2,7 +2,8 @@ version: v0.4
 project:
   name: Quantitative bridge for Erdos problem 687
   description: >-
-    An independent CRT and prime-counting transfer from a uniform quadratic
+    The substantive source of an independent CRT and prime-counting transfer
+    from a uniform quadratic
     Jacobsthal bound to Y(x) = O((x/log x)^2). The conditional transfer is
     verified. The candidate unconditional instantiation still awaits the
     imported OpenAI theorem's dependency rebuild. The near-linear bound
@@ -75,5 +76,7 @@ fidelity:
     Records a known quantitative upper bound only, not the exact order or
     the near-linear conjecture. Uses the exact finite natural residue-cover
     definition and its natural supremum. The dependency port documents
-    original pins and third-party licensing, including externally fetched
-    StrongPNT material whose upstream repository has no explicit license.
+    original pins and third-party licensing. Its seven StrongPNT sources
+    are complete new-file additions reconstructed from OpenAI's released
+    Apache-licensed patch, with the original MathInc and Gauss credits.
+    They do not include files retained from the unlicensed upstream checkout.

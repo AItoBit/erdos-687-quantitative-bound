@@ -10,7 +10,7 @@ rev = "065356127b1dc0016f66b7283ce0ce2c4055aa55"
 [[require]]
 name = "jacobsthalLean435"
 git = "https://github.com/AItoBit/jacobsthal-lean435.git"
-rev = "00952c2a704382e0581ce61496e8056e3339e247"
+rev = "0d491f9aeca67e89dc40d61581718549b12b9e0e"
 [[lean_lib]]
 name = "Erdos687"
 [[lean_lib]]

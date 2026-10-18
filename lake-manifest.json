@@ -7,10 +7,10 @@
       "type": "git",
       "subDir": null,
       "scope": "",
-      "rev": "00952c2a704382e0581ce61496e8056e3339e247",
+      "rev": "0d491f9aeca67e89dc40d61581718549b12b9e0e",
       "name": "jacobsthalLean435",
       "manifestFile": "lake-manifest.json",
-      "inputRev": "00952c2a704382e0581ce61496e8056e3339e247",
+      "inputRev": "0d491f9aeca67e89dc40d61581718549b12b9e0e",
       "inherited": false,
       "configFile": "lakefile.lean"
     },
@@ -123,31 +123,40 @@
       "configFile": "lakefile.toml"
     },
     {
-      "type": "path",
+      "url": "https://github.com/AItoBit/jacobsthal-pnt-lean435.git",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "4698982c635e019c83b6216cbd9777e0a7f89198",
       "name": "PrimeNumberTheoremAnd",
-      "scope": "",
-      "dir": ".lake/packages/jacobsthalLean435/vendor/PrimeNumberTheoremAnd",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "4698982c635e019c83b6216cbd9777e0a7f89198",
       "inherited": true,
-      "configFile": "lakefile.toml",
-      "manifestFile": "lake-manifest.json"
+      "configFile": "lakefile.toml"
     },
     {
-      "type": "path",
+      "url": "https://github.com/AItoBit/jacobsthal-strongpnt-lean435.git",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "b96d1670fb7fabf7ea55d67cc3bb69ce1f054953",
       "name": "StrongPNT",
-      "scope": "",
-      "dir": ".lake/packages/jacobsthalLean435/external/StrongPNT",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "b96d1670fb7fabf7ea55d67cc3bb69ce1f054953",
       "inherited": true,
-      "configFile": "lakefile.toml",
-      "manifestFile": "lake-manifest.json"
+      "configFile": "lakefile.toml"
     },
     {
-      "type": "path",
-      "name": "AbsorptionCutoff",
+      "url": "https://github.com/AItoBit/jacobsthal-absorption-lean435.git",
+      "type": "git",
+      "subDir": null,
       "scope": "",
-      "dir": ".lake/packages/jacobsthalLean435/vendor/AbsorptionCutoff",
+      "rev": "4cab242c97bd91d5452af8e5f5f25cf23810fa97",
+      "name": "AbsorptionCutoff",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "4cab242c97bd91d5452af8e5f5f25cf23810fa97",
       "inherited": true,
-      "configFile": "lakefile.toml",
-      "manifestFile": "lake-manifest.json"
+      "configFile": "lakefile.toml"
     }
   ],
   "name": "erdos687",

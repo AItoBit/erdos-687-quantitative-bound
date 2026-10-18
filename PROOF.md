@@ -12,7 +12,7 @@ Source: https://github.com/openai/math/tree/1581d4cbdd69a0faf34b2089614fe2a81431
 
 For a covering, the Chinese remainder theorem gives t modulo P(x) with t congruent to a_p modulo p for every prime p<=x. For each covered m, a prime p<=x divides m-t, so gcd(|m-t|,P(x))>1. Conversely, if this noncoprimality holds for every m in [1,y], a common prime divisor p of |m-t| and P(x) is at most x and shows that m belongs to the selected class t modulo p. This proves the exact equivalence formalized by `covered_iff_shift`, including negative differences and y=0.
 
-Suppose every integer interval of lengthM contains an integer coprime toP(x). If a covering had y>=M, apply this property at the integer a=1-t. It gives 0<=i<M with |1-t+i| coprime toP(x). The integer m=i+1 lies in [1,M] and hence in [1,y], contradicting the covering property. Thus every cover length is <M, and its natural supremum Y(x) is <=M. This is `cover_lt_interval_bound` followed by `Y_le_interval_bound`.
+Suppose every integer interval of length M contains an integer coprime to P(x). If a covering had y>=M, apply this property at the integer a=1-t. It gives 0<=i<M with |1-t+i| coprime to P(x). The integer m=i+1 lies in [1,M] and hence in [1,y], contradicting the covering property. Thus every cover length is <M, and its natural supremum Y(x) is <=M. This is `cover_lt_interval_bound` followed by `Y_le_interval_bound`.
 
 ## Prime counting and the quantitative estimate
 
@@ -20,7 +20,7 @@ For x>=2 set k=pi(x)>0. The positive integer P(x) has exactly pi(x) distinct pri
 
     Y(x) <= M <= C*pi(x)^2.
 
-Chebyshev's estimate gives an absolute A>0 with pi(x)<=A*x/log x for all sufficiently large natural x. The implementation uses A=log4+1 and Mathlib's eventual upper bound. Squaring this nonnegative inequality yields
+Chebyshev's estimate gives an absolute A>0 with pi(x)<=A*x/log x for all sufficiently large natural x. The implementation uses A=log(4)+1 and Mathlib's eventual upper bound. Squaring this nonnegative inequality yields
 
     Y(x) <= C*A^2*(x/log x)^2.
 

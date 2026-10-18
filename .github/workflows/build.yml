@@ -9,19 +9,23 @@ jobs:
       LEAN_NUM_THREADS: 2
     steps:
       - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          build: 'false'
+          test: 'false'
+          lint: 'false'
       - uses: actions/cache/restore@v4
         with:
           path: |
             .lake/build
             .lake/packages/jacobsthalLean435/.lake/build
-            .lake/packages/jacobsthalLean435/vendor/PrimeNumberTheoremAnd/.lake/build
-            .lake/packages/jacobsthalLean435/vendor/AbsorptionCutoff/.lake/build
-            .lake/packages/jacobsthalLean435/external/StrongPNT/.lake/build
+            .lake/packages/PrimeNumberTheoremAnd/.lake/build
+            .lake/packages/AbsorptionCutoff/.lake/build
+            .lake/packages/StrongPNT/.lake/build
           key: proof-progress-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}-${{ github.sha }}-${{ github.run_id }}
           restore-keys: proof-progress-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}-
-      - uses: leanprover/lean-action@v1
-        with:
-          build-args: '--wfail Solution Challenge Transfer'
+      - name: Build complete candidate
+        run: lake --wfail build Solution Challenge Transfer
       - name: Audit closed result and transfer
         shell: bash
         run: |
@@ -42,7 +46,7 @@ jobs:
           path: |
             .lake/build
             .lake/packages/jacobsthalLean435/.lake/build
-            .lake/packages/jacobsthalLean435/vendor/PrimeNumberTheoremAnd/.lake/build
-            .lake/packages/jacobsthalLean435/vendor/AbsorptionCutoff/.lake/build
-            .lake/packages/jacobsthalLean435/external/StrongPNT/.lake/build
+            .lake/packages/PrimeNumberTheoremAnd/.lake/build
+            .lake/packages/AbsorptionCutoff/.lake/build
+            .lake/packages/StrongPNT/.lake/build
           key: proof-progress-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}-${{ github.sha }}-${{ github.run_id }}
