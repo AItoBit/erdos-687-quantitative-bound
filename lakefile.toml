@@ -7,6 +7,10 @@ autoImplicit = false
 name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4.git"
 rev = "065356127b1dc0016f66b7283ce0ce2c4055aa55"
+[[require]]
+name = "jacobsthalLean435"
+git = "https://github.com/AItoBit/jacobsthal-lean435.git"
+rev = "00952c2a704382e0581ce61496e8056e3339e247"
 [[lean_lib]]
 name = "Erdos687"
 [[lean_lib]]
@@ -14,3 +18,6 @@ name = "Transfer"
 
 [[lean_lib]]
 name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
